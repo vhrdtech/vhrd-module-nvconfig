@@ -39,6 +39,8 @@ pub struct BoardConfig {
     /// Version of the board
     pub hw_version: Version,
 
+    /// Bootloader binary size
+    pub bootloader_size: u32,
     /// CRC of the bootloader, if incorrect, only SWD can be used to reprogram everything
     pub bootloader_crc: u64,
     /// Wait this amount of time before booting firmware
