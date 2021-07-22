@@ -51,7 +51,7 @@ pub struct BoardConfig {
     /// Git hash or similar
     pub fw_vcs_id: [u8; 8],
     /// Length of the firmware
-    pub fw_size: usize,
+    pub fw_size: u32,
     /// CRC of the firmware
     pub fw_crc: u64,
     // Globally unique identifier for each hardware unit, use STM UID
@@ -68,7 +68,7 @@ pub struct BoardConfig {
     /// Can be set by user manually or assigned by provisioning tool.
     pub uavcan_node_id: u8,
 
-    pub reserved: [u8; 154]
+    pub reserved: [u8; 164]
 }
 
 #[allow(unreachable_code)]
