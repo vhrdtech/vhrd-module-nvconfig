@@ -70,7 +70,7 @@ pub struct BoardConfig {
     /// Can be set by user manually or assigned by provisioning tool.
     pub uavcan_node_id: u8,
 
-    pub reserved: [u8; 164]
+    pub reserved: [u8; 156]
 }
 
 #[allow(unreachable_code)]
