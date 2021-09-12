@@ -87,8 +87,11 @@ pub struct Version {
     pub patch: u8,
 }
 
+#[allow(unreachable_code)]
+unsafe fn _version_size_is_valid() { core::mem::transmute::<Version, [u8; 3]>(panic!()); }
+
 #[derive(Copy, Clone, Eq, PartialEq, Debug)]
-#[repr(C)]
+#[repr(u32)]
 pub enum CANBusSpeed {
     Unknown,
     _125kBps,
@@ -97,10 +100,16 @@ pub enum CANBusSpeed {
     _1Mbps,
 }
 
+#[allow(unreachable_code)]
+unsafe fn _canbusspeed_size_is_valid() { core::mem::transmute::<CANBusSpeed, [u8; 4]>(panic!()); }
+
 #[derive(Copy, Clone, Eq, PartialEq, Debug)]
-#[repr(C)]
+#[repr(u32)]
 pub enum CANBusMode {
     Unknown,
     Classical,
     FD,
 }
+
+#[allow(unreachable_code)]
+unsafe fn _canbusmode_size_is_valid() { core::mem::transmute::<CANBusMode, [u8; 4]>(panic!()); }
